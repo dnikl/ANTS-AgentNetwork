@@ -39,7 +39,7 @@ The agent network uses technologies such as gRPC, HTTP/2, Protobuf and TLS to en
 
 To better understand the architecture of the agent network, the following diagram shows the different layers that make up the network. These layers have a modular structure to enable a flexible and scalable implementation.
 
-\[Grafik Layer\]
+![Diagram of ANTS-AgentNetwork](./images/layer_description.png)
 
 ### **Flexible communication models in the agent network**
 
