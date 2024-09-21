@@ -41,8 +41,6 @@ To better understand the architecture of the agent network, the following diagra
 
 ![Diagram of ANTS-AgentNetwork](./images/layer_description.png)
 
-
-
 ### **Flexible communication models in the agent network**
 
 A central component of the agent network is flexible communication between agents and servers, which can vary depending on the use case:
