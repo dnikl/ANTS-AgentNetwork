@@ -54,11 +54,11 @@ Ein zentraler Bestandteil des Agenten-Netzwerks ist die flexible Kommunikation z
 
 Diese Modelle ermöglichen eine effiziente und skalierbare Interaktion im Netzwerk.
 
-![Server-Modell][./images/agent_communication_models.de.png]  
+![Server-Modell](./images/agent_communication_models.de.png)  
 
 Die folgende Abbildung gibt einen Überblick über mögliche Marktteilnehmer und Basisdienste, die in das Agenten-Netzwerk integriert werden können. Diese Akteure spielen eine zentrale Rolle bei der Entwicklung und Implementierung spezifischer Dienste und Funktionen.
 
-![Agentendienste][./images/agent_network_services_and_companies.de.png]
+![Agentendienste](./images/agent_network_services_and_companies.de.png)
 
 ## **Internet Standardisierung Prozess**
 
@@ -197,7 +197,7 @@ Das Agenten-Netzwerk bietet eine Vielzahl von Anwendungsmöglichkeiten, die sowo
 Ein klassischer Anwendungsfall ist die Automatisierung von Reisebuchungen. Benutzer können einen Agenten beauftragen, den günstigsten Flugpreis für eine bestimmte Strecke zu ermitteln. Der Agent durchsucht verschiedene Flugbuchungsdienste, vergleicht die Preise und gibt eine Empfehlung ab. Zusätzlich kann der Agent die Preisentwicklung über einen bestimmten Zeitraum beobachten und den Nutzer informieren, wenn der Preis ein vorher festgelegtes Zielniveau erreicht hat. Sobald der Zielpreis erreicht ist, übernimmt der Agent automatisch die Buchung und informiert den Nutzer über den erfolgreichen Abschluss.
 
 Die folgende Grafik zeigt den Ablauf dieses Prozesses:  
-![Beispiel Flugpreisermittlung][./images/flight_price_tracking_sequence.de.png]
+![Beispiel Flugpreisermittlung](./images/flight_price_tracking_sequence.de.png)
 
 #### **Gesundheitsüberwachung und \-forschung:**
 
@@ -224,7 +224,7 @@ Das Agenten-Netzwerk birgt ein großes Potenzial für neue Anwendungen. Agenten 
 
 Diese Grafik zeigt mögliche Anwendungsbereiche des Agenten-Netzwerks. Sie veranschaulicht die vielfältigen Einsatzmöglichkeiten des Netzwerks und regt zur Entwicklung weiterer innovativer Anwendungen an.
 
-![Mögliche Service][./images/agent_services_overview.de.png]
+![Mögliche Service](./images/agent_services_overview.de.png)
 
 ## **Skalierbarkeit und Leistungsüberlegungen**
 
