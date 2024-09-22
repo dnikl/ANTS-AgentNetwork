@@ -40,7 +40,7 @@ Das Agenten-Netzwerk nutzt Technologien wie gRPC, HTTP/2, Protobuf und TLS, um e
 
 Um die Architektur des Agenten-Netzwerks besser zu verstehen, zeigt die folgende Grafik die verschiedenen Schichten (Layer), aus denen das Netzwerk besteht. Diese Schichten sind modular aufgebaut, um eine flexible und skalierbare Implementierung zu ermöglichen.
 
-### **![][image1]**
+![ANTS-AgentNetwork Diagramm](./images/layer_description.de.png)
 
 ### **Flexible Kommunikationsmodelle im Agenten-Netzwerk**
 
@@ -54,10 +54,11 @@ Ein zentraler Bestandteil des Agenten-Netzwerks ist die flexible Kommunikation z
 
 Diese Modelle ermöglichen eine effiziente und skalierbare Interaktion im Netzwerk.
 
-![][image2]  
+![Server-Modell][./images/agent_communication_models.de.png]  
+
 Die folgende Abbildung gibt einen Überblick über mögliche Marktteilnehmer und Basisdienste, die in das Agenten-Netzwerk integriert werden können. Diese Akteure spielen eine zentrale Rolle bei der Entwicklung und Implementierung spezifischer Dienste und Funktionen.
 
-![][image3]
+![Agentendienste][./images/agent_network_services_and_companies.de.png]
 
 ## **Internet Standardisierung Prozess**
 
@@ -196,7 +197,7 @@ Das Agenten-Netzwerk bietet eine Vielzahl von Anwendungsmöglichkeiten, die sowo
 Ein klassischer Anwendungsfall ist die Automatisierung von Reisebuchungen. Benutzer können einen Agenten beauftragen, den günstigsten Flugpreis für eine bestimmte Strecke zu ermitteln. Der Agent durchsucht verschiedene Flugbuchungsdienste, vergleicht die Preise und gibt eine Empfehlung ab. Zusätzlich kann der Agent die Preisentwicklung über einen bestimmten Zeitraum beobachten und den Nutzer informieren, wenn der Preis ein vorher festgelegtes Zielniveau erreicht hat. Sobald der Zielpreis erreicht ist, übernimmt der Agent automatisch die Buchung und informiert den Nutzer über den erfolgreichen Abschluss.
 
 Die folgende Grafik zeigt den Ablauf dieses Prozesses:  
-![][image4]
+![Beispiel Flugpreisermittlung][./images/flight_price_tracking_sequence.de.png]
 
 #### **Gesundheitsüberwachung und \-forschung:**
 
@@ -223,7 +224,7 @@ Das Agenten-Netzwerk birgt ein großes Potenzial für neue Anwendungen. Agenten 
 
 Diese Grafik zeigt mögliche Anwendungsbereiche des Agenten-Netzwerks. Sie veranschaulicht die vielfältigen Einsatzmöglichkeiten des Netzwerks und regt zur Entwicklung weiterer innovativer Anwendungen an.
 
-![][image5]
+![Mögliche Service][./images/agent_services_overview.de.png]
 
 ## **Skalierbarkeit und Leistungsüberlegungen**
 
