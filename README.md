@@ -1,5 +1,7 @@
 # **A decentralized agent-to-agent automation network**
 
+*The ANTS AgentNetwork can be thought of as a "World Wide Web for autonomous agents", providing a decentralized, scalable, and standardized platform where agents can communicate, collaborate, and automate tasks across a wide range of applications, much like Web sites and services do within the traditional World Wide Web.*
+
 **Abstract**: This project describes the concept of a decentralized network of autonomous software agents, called “AgentNetwork”. These agents can perform both simple and complex tasks autonomously in a distributed environment without relying on a central authority. The network consists of four layers: Communication and security layer, application layer, recipe and process layer and user layer with autonomous identity. It enables flexible interaction between agents via different communication models and supports a variety of use cases that we already know from the Internet today, such as travel bookings, health monitoring and business process automation. It also opens up completely new application possibilities that were previously unthinkable. Thanks to its decentralized architecture, the network is scalable, secure and supports the automation of complex processes in both the B2C and B2B sectors. It is supported by the A2AC consortium, which drives standards, security and innovation. This document is aimed at technically skilled individuals who wish to participate in or further develop the network.
 
 ## **Introduction**
