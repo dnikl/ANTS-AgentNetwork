@@ -199,6 +199,13 @@ Ein klassischer Anwendungsfall ist die Automatisierung von Reisebuchungen. Benut
 Die folgende Grafik zeigt den Ablauf dieses Prozesses:  
 ![Beispiel Flugpreisermittlung](./images/flight_price_tracking_sequence.de.png)
 
+#### **Erweiterter Anwendungsfall: Group Buy für Flugbuchungen:**
+Der klassische Fall einer Flugbuchung kann in einem Agentennetzwerk völlig neu gedacht werden. Ein neuer Dienst, z.B. "Group Buy", könnte sich im Netzwerk registrieren und den Nutzenden anbieten, statt einer normalen Einzelbuchung an einem Gruppenkauf für Flugreisen teilzunehmen. Die Agenten der Nutuzenden registrieren sich für eine gemeinsame Reise, z.B. am Tag X von Zürich nach Los Angeles. Der Group Buy Server sammelt die Interessenten und sobald 200 interessierte Personen zusammen sind, verhandelt der Agent des Group Buy Servers mit den Agenten der verschiedenen Fluggesellschaften, um einen attraktiven Flugpreis auszuhandeln.
+
+Auf diese Weise könnten sogar neue Fluggesellschaften entstehen, die offiziell noch nicht bekannt sind. Diese Fluggesellschaften könnten auf Strecken wie Zürich - Los Angeles Zubringerdienste einrichten, ohne auf klassische Marketingaktivitäten angewiesen zu sein.
+
+
+
 #### **Gesundheitsüberwachung und \-forschung:**
 
 Agenten können im Gesundheitsbereich eingesetzt werden, um kontinuierlich die neuesten Forschungsergebnisse zu überwachen, die für bestimmte Krankheiten relevant sind. Sie benachrichtigen den Nutzer, sobald neue relevante Informationen verfügbar sind. Darüber hinaus können Agenten Patienten mit Forschungseinrichtungen verbinden, die an bestimmten Studien interessiert sind, und so den Zugang zu wichtigen medizinischen Informationen und Studien erleichtern.
