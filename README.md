@@ -185,6 +185,11 @@ The agent network offers a wide range of use cases that can transform both daily
 A classic use case is the automation of travel bookings. Users can commission an agent to find the cheapest flight price for a specific route. The agent searches various flight booking services, compares prices, and makes recommendations. Additionally, the agent can monitor price trends over a period of time and inform the user when the price reaches a preset target. Once the target price is reached, the agent automatically completes the booking and notifies the user of the successful transaction.  
 The following diagram illustrates the process:
 
+**Extended use case Travel Booking: Group Buy for flight bookings:**
+The classic case of a flight booking can be completely rethought in an agent network. A new service, e.g. “Group Buy”, could register in the network and offer users the opportunity to participate in a group purchase for air travel instead of a normal individual booking.The users' agents register for a joint trip, e.g. on day X from Zurich to Los Angeles. The Group Buy Server collects the interested parties and as soon as 200 people are together, the agent of the Group Buy Server negotiates with the agents of the various airlines to negotiate an attractive flight price.
+
+In this way, new airlines could even emerge that are not yet officially known. These airlines could set up feeder services on routes such as Zurich - Los Angeles without having to rely on traditional marketing activities.
+
 **Health Monitoring and Research:**  
 Agents can be deployed in the health sector to continuously monitor the latest research results relevant to specific diseases. They notify users as soon as new relevant information becomes available. Moreover, agents can connect patients with research institutions looking for participants in specific studies, facilitating access to important medical information and research.
 
