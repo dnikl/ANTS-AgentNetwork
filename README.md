@@ -51,8 +51,11 @@ A central component of the agent network is flexible communication between agent
 * Specialized agent: A server acts as a specialized agent that receives requests, performs additional searches and provides well-founded answers asynchronously via webhook.  
 * Direct agent exchange: Agents communicate directly with each other without an intermediary server. In this case, the agents communicate in real time using a web socket.  
 * Indirect agent exchange: An agent communicates via an intermediary that establishes the connection to other agents.
+* Event/Status Streams: Agents can (e.g., via Pub/Sub) continuously publish status or event messages without requiring a specific request. Other agents or recipes can subscribe to particular event types (e.g., `PRICE_UPDATE`) and receive real-time notifications.
+* Long-Term Subscription: Recipes or agents can register **permanently** for relevant events and even define filters. This setup allows continuous data streams or ongoing monitoring tasks to be realized.
+*Extended Delegation: Offers the possibility of delegating tasks to other agents with **conditions** (e.g., time limits, cost limits) or fallback agents. Delegated agents can send intermediate status updates during execution, enabling parallel and cascading processes.
 
-These models enable efficient and scalable interaction in the network.
+These models enable **efficient**, **scalable**, and now also **event-driven** interaction in the network. By leveraging event/status streams and extended delegation, the agent network can **foster emergent behaviors**, as agents continuously exchange information, respond to unexpected events, and redistribute tasks in a flexible manner.
 
 \[Grafik Server\]
 
@@ -463,6 +466,7 @@ The agent network is more than just a technological innovation – it is a step 
 
 Daniel Niklaus  
 V: 0.2  
-2024.09.21
+2025.01.12 Inspiration: https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
+
 
 
