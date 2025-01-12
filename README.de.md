@@ -60,6 +60,123 @@ Die folgende Abbildung gibt einen Überblick über mögliche Marktteilnehmer und
 
 ![Agentendienste](./images/agent_network_services_and_companies.de.png)
 
+## **Von der Biologie insperierte Rezepte (Layer 3)**
+Diese Schicht steuert **Arbeitsabläufe** und **Automatisierungen** im Agenten-Netzwerk. Benutzer und Entwickler können sogenannte **„Rezepte“** erstellen, die – ähnlich wie Skripte – verschiedene Agenten und Dienste miteinander orchestrieren. Diese Schicht bietet weiterhin eine **Low-Code-Umgebung**, die sowohl technisch weniger versierten Anwendern als auch Entwicklern **Flexibilität** und **Übersicht** bietet.
+
+
+#### 1. Kernaufgabe: Automatisierung über Rezepte
+
+- **Einfacher Einstieg**  
+  In einer grafischen oder skriptbasierten Oberfläche lassen sich Abläufe definieren („Wenn Ereignis X eintritt, führe Aktion Y aus“).
+
+- **Integration externer Services**  
+  Rezepte binden unterschiedliche Agenten, APIs und Dienste (z.B. Reisebuchung, Dokumentenverarbeitung) zusammen.
+
+- **Low-Code-Ansatz**  
+  Standardbausteine und Drag-and-Drop-Editoren erleichtern das Erstellen und Anpassen von Automatisierungen ohne tiefes Programmierwissen.
+
+#### Erweiterter Modus: Freie Programmierung oder DSL
+
+Um **maximale Flexibilität** zu erlauben, unterstützt die Rezept- und Ablaufschicht auch einen **erweiterten Modus**, in dem man Rezepte:
+
+1. **In einer beliebigen Skriptsprache** (z.B. Python, JavaScript, Lua) formulieren kann – die Low-Code-Engine interpretiert oder ruft diese Skripte auf.
+2. **Über eine Domain-Specific Language (DSL)** oder eine **Beschreibungssprache** (z.B. YAML-/JSON-basiert, BPMN-ähnlich) definieren kann, die einen Interpreter im Hintergrund nutzt.
+3. **Komplett durch eine selbst programmierbare Komponente** ersetzen kann, wenn man noch tiefer ins System eingreifen möchte (z.B. Integration in vorhandene Unternehmens-Workflows oder dedizierte Orchestrierungs-Engines).
+
+#### Freie Auswahl der Technologie
+- **Offene Schnittstellen**: Die Rezept-Engine stellt eine API zur Verfügung, über die Rezepte erstellt, verändert und ausgeführt werden können – unabhängig davon, ob sie als visuelles Flowchart oder als Code vorliegen.  
+- **Plug-in-Mechanismus**: Erweiterungen (z.B. Custom Nodes, DSL-Parser) können als Plug-ins ins System eingebracht werden.  
+- **Koexistenz**: Ein Teil des Workflows kann über Drag & Drop erstellt sein, während einzelne Schritte als frei programmierbare Skripte (oder DSL) implementiert sind. 
+
+#### Beispiel: Eigene DSL
+- Man könnte eine schlanke DSL entwerfen, in der Abläufe etwa so aussehen:
+  ```yaml
+  onEvent: "priceChanged"
+  steps:
+    - name: "CheckPrice"
+      condition: "price > 500"
+      ifTrue:
+        - action: "invokeAgent"
+          agent: "AlternativeBookingService"
+      ifFalse:
+        - action: "notifyUser"
+          message: "Preis ist unter 500!"
+
+#### 2. Dynamische und regelbasierte Orchestrierung
+
+Um **emergentes Verhalten** zu unterstützen und unvorhergesehene Situationen automatisiert zu meistern, setzt die erweiterte Rezept- und Ablaufschicht auf **regelbasierte, eventgetriebene** Konzepte:
+
+1. **Regelbasierte Workflows**  
+   - Anstelle rein linearer „Wenn A, dann B“-Abläufe kann ein Rezept unterschiedliche **Zweige** aktivieren, sobald bestimmte **Bedingungen** oder **Events** eintreten (z.B. Fehlermeldungen, Zeitüberschreitungen, Statusupdates von Agenten).  
+   - Rezepte können **dynamisch** darauf reagieren, indem sie neue Aktionen auslösen oder Pfade abbrechen.
+
+2. **Event-Driven Architektur**  
+   - Agenten (Layer 2) senden **asynchron** Ereignisse ins Netzwerk (z.B. „Preis hat sich verändert“, „Anzahl Teilnehmer erreicht“).  
+   - Rezepte können solche Events abonnieren (Pub/Sub) und dadurch **laufend** reagieren, anstatt nur einmalig eine Anweisung zu geben.
+
+3. **Parallel- und Schwarm-Mechanismen**  
+   - **Parallel-Knoten** ermöglichen es, dieselbe Aufgabe an mehrere Agenten oder Dienste gleichzeitig zu delegieren und anschließend die **besten Ergebnisse** zu wählen.  
+   - **Swarm-Konzepte** (z.B. mehrere Agenten suchen parallel nach dem günstigsten Flug) fördern „suche und vergleiche“ in größerer Bandbreite und erhöhen damit Robustheit und Effizienz.
+
+#### 3. Feedback-Schleifen und emergente Prozesse
+
+Ein zentrales Element des erweiterten Layer 3 ist die **Kontinuität** von Rückmeldungen und Zustandsänderungen:
+
+- **Fortlaufende Statusupdates**  
+  Agenten können jederzeit ihren Fortschritt melden (z.B. „40 % erledigt“, „weitere Daten nötig“).
+
+- **Adaptives Rezeptverhalten**  
+  Abhängig von diesen Rückmeldungen kann ein Rezept eigenständig seinen Ablauf **anpassen** (z.B. andere Services nachfordern, Timeouts heraufsetzen, günstigere Alternativen suchen).
+
+- **Evolutionäre / iterative Ansätze** *(optional)*  
+  Rezepte können in Schleifen ausgeführt werden, um aus vergangenen Durchläufen zu lernen und beim nächsten Start verbesserte Parameter zu nutzen.
+
+#### 4. Low-Code-Umgebung: Bedienbarkeit trotz Komplexität
+
+Damit die zusätzlichen **Parallel- und Regelmechanismen** nicht zu komplex werden, wird eine **Low-Code-Philosophie** verfolgt:
+
+1. **Visuelle Editoren**  
+   - Rezepte lassen sich wie **Flow-Charts** modellieren: Blöcke (Tasks, Event-Listener, Gateways) und Kanten (Übergänge bei Erfolg, Misserfolg, Bedingungen).  
+   - Spezielle **Swarm-Knoten** (Mehrfachaufrufe) oder **Fallback-Knoten** (Fehlerbehandlung) können vordefinierte Bausteine sein.
+
+2. **Regel-Editor**  
+   - Einfache If-Then-Else-Bedingungen können in einer **GUI** gepflegt werden (z.B. „Wenn Preis > 500, dann alternativen Agent abfragen“).  
+   - Fortgeschrittene Nutzer können bei Bedarf Skriptlogik (z.B. JavaScript, Python) einbetten.
+
+3. **Vorlagen und Best Practices**  
+   - Häufige Ablaufmuster (z.B. parallele Angebotssuche, Gruppenverhandlungen, Eskalationskette) stehen als **Template** zur Verfügung.  
+   - Dies senkt die Hürde, komplexe Rezepte aufzubauen, die emergentes Verhalten ermöglichen.
+
+#### 5. Vorteile und Anwendungsbeispiele
+
+- **Selbstanpassende Buchungsprozesse**  
+  Rezepte reagieren automatisch auf Preisschwankungen oder ausgebuchte Kontingente und weichen ohne manuelles Eingreifen auf andere Optionen aus.
+
+- **Robuste Fehlerbehandlung**  
+  Statt dass ein Workflow abbricht, können Rezepte alternative Pfade oder andere Agenten ansteuern, wenn etwas scheitert – vergleichbar mit einer biologischen „Heilungsfunktion“.
+
+- **Mehrwert durch parallele Ausführung**  
+  Zeit- und Kostenvorteile durch simultane Anfragen bei mehreren Anbietern/Agenten.
+
+- **Swarm-Szenarien**  
+  In komplexen Use Cases (z.B. „Group-Buy“ für Flüge oder gemeinschaftliche Angebote) verteilen Rezepte Unteraufgaben an eine Vielzahl von Agenten und konsolidieren automatisch die Ergebnisse.
+
+#### 6. Technische Realisierung
+
+- **Persistence**  
+  Während des Rezeptablaufs werden Zwischenergebnisse in einer **Kontext-Datenstruktur** gespeichert, sodass jederzeit nachvollziehbar ist, welcher Pfad gewählt wurde.
+
+- **Protokoll-Support (Layer 1)**  
+  Implementierung von asynchronen Events/Streams und `DELEGATE_WITH_CONDITIONS`-Methoden, damit Agenten Rückmeldungen oder Teilaufgaben abgeben können.
+
+- **Orchestrierungs-Engine**  
+  Ein zentraler oder dezentraler Service, der Rezepte interpretiert und in Echtzeit ausführt, kann in Container-Umgebungen gehostet werden (z.B. Kubernetes, Docker). Dadurch ist eine skalierbare und hochverfügbare Ausführung gewährleistet.
+
+- **Sicherheit**  
+  Jeder Rezeptschritt prüft mittels OAuth 2.0 / JWT, ob der aufgerufene Agent berechtigt ist, und führt ein **Audit Logging** durch.
+
+Rezpete sind **flexible, emergente Workflows**, die auf **Rückmeldungen** der Agenten reagieren, **parallel suchen** und sich an veränderte Bedingungen anpassen können. Damit nähert sich das Agenten-Netzwerk stärker **biologischen Systemen** an, in denen viele lokale Einheiten durch **Feedbackschleifen** und **Dezentralität** robuste, adaptive Lösungen hervorbringen. Gleichzeitig bleibt das System dank **Low-Code-Editoren** für eine breite Nutzerschaft **zugänglich** und gut steuerbar.
+
 ## **Internet Standardisierung Prozess**
 
 Das **AgentNetworkProtocolSecure (ANTS)**\-Protokoll (`ants://`) ist ein standardisiertes Kommunikationsprotokoll, das speziell für dezentrale, autonome Software-Agenten im AgentNetwork entwickelt wurde. Es ermöglicht sichere und effiziente Kommunikation in verschiedenen Szenarien, darunter synchrone, asynchrone und Echtzeitkommunikation. Dieses Protokoll bietet die notwendige Flexibilität, Skalierbarkeit und Sicherheit, um den Anforderungen eines modernen, dezentralen Netzwerks gerecht zu werden.
