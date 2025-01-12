@@ -74,7 +74,7 @@ Die folgende Abbildung gibt einen Überblick über mögliche Marktteilnehmer und
 Diese Schicht steuert **Arbeitsabläufe** und **Automatisierungen** im Agenten-Netzwerk. Benutzer und Entwickler können sogenannte **„Rezepte“** erstellen, die – ähnlich wie Skripte – verschiedene Agenten und Dienste miteinander orchestrieren. Diese Schicht bietet weiterhin eine **Low-Code-Umgebung**, die sowohl technisch weniger versierten Anwendern als auch Entwicklern **Flexibilität** und **Übersicht** bietet.
 
 
-#### 1. Kernaufgabe: Automatisierung über Rezepte
+#### 1. Automatisierung über Rezepte
 
 - **Einfacher Einstieg**  
   In einer grafischen oder skriptbasierten Oberfläche lassen sich Abläufe definieren („Wenn Ereignis X eintritt, führe Aktion Y aus“).
@@ -186,6 +186,17 @@ Damit die zusätzlichen **Parallel- und Regelmechanismen** nicht zu komplex werd
   Jeder Rezeptschritt prüft mittels OAuth 2.0 / JWT, ob der aufgerufene Agent berechtigt ist, und führt ein **Audit Logging** durch.
 
 Rezpete sind **flexible, emergente Workflows**, die auf **Rückmeldungen** der Agenten reagieren, **parallel suchen** und sich an veränderte Bedingungen anpassen können. Damit nähert sich das Agenten-Netzwerk stärker **biologischen Systemen** an, in denen viele lokale Einheiten durch **Feedbackschleifen** und **Dezentralität** robuste, adaptive Lösungen hervorbringen. Gleichzeitig bleibt das System dank **Low-Code-Editoren** für eine breite Nutzerschaft **zugänglich** und gut steuerbar.
+
+## Benutzerebene – Konfiguration des „Aggressivitätsgrades (Layer 4)**
+
+Damit Nutzende – ob Endverbraucher oder Unternehmens-Admins – den Grad an **Selbstorganisation** und **explorativen Mechanismen** steuern können, bietet Layer 4 eine Konfiguration des „Aggressivitätsgrades“:
+
+- **Explorationstiefe**: Bestimmt, wie viele alternative Pfade ein Rezept ausführen darf („Teste bis zu 5 Agenten parallel“).
+- **Zeitlimit**: Legt fest, wie lange das System suchen oder verhandeln darf („Abbruch nach 30 Sekunden“).
+- **Budgetobergrenzen**: Begrenzt den finanziellen Rahmen einer automatischen Kauf- oder Buchungsentscheidung („Max. 500 € pro Ticket“).
+- **Risikofreudigkeit**: Gibt an, ob (und in welchem Ausmaß) Zufallsfaktoren oder experimentelle Agenten einbezogen werden dürfen („Lasse 10 % meiner Abfragen an neue, ungetestete Anbieter gehen“).
+
+Durch diese Konfiguration behält der Endnutzer die **volle Kontrolle** über den Automatisierungsprozess. Ob man **konservativ** (nur etablierte Wege und feste Limits) oder **aggressiv** (Parallelsuche, Evolutionspfade) vorgeht, ist frei wählbar. Dadurch werden sowohl **Datenschutz** und **Budgetlimits** als auch **Innovation** und **Flexibilität** miteinander in Einklang gebracht.
 
 ## **Internet Standardisierung Prozess**
 
