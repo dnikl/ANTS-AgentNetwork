@@ -60,6 +60,55 @@ The following figure provides an overview of possible market participants and ba
 
 \[Grafik Dienste\]
 
+
+![Agent Services](./images/agent_network_services_and_companies.de.png)
+
+## **Biology-Inspired Recipes (Layer 3)**
+
+This layer controls **workflows** and **automations** within the agent network. Users and developers can create **“recipes”**—much like scripts—to orchestrate various agents and services. The layer still provides a **low-code environment** that offers both non-technical users and developers **flexibility** and **clarity**.
+
+
+#### 1. Core Task: Automation via Recipes
+
+- **Easy Start**  
+  In a graphical or script-based interface, you can define workflows (e.g., “When event X happens, perform action Y”).
+
+- **Integration of External Services**  
+  Recipes connect diverse agents, APIs, and services (e.g., travel booking, document processing).
+
+- **Low-Code Approach**  
+  Standard building blocks and drag-and-drop editors make it easy to create and modify automations without extensive programming knowledge.
+
+
+#### **Advanced Mode: Custom Programming or DSL**
+
+To enable **maximum flexibility**, the recipe and workflow layer also supports an **advanced mode** that allows you to define recipes:
+
+1. **In any scripting language** (e.g., Python, JavaScript, Lua), which the low-code engine can interpret or call directly.  
+2. **Using a Domain-Specific Language (DSL)** or **description language** (e.g., YAML/JSON-based, BPMN-style) that uses a background interpreter.  
+3. **Replaced entirely by a custom-programmed component** if you want even deeper integration (e.g., with existing enterprise workflows or dedicated orchestration engines).
+
+##### Free Choice of Technology
+- **Open Interfaces**: The recipe engine provides an API to create, modify, and run recipes—regardless of whether they are visual flowcharts or code.  
+- **Plugin Mechanism**: Extensions (e.g., custom nodes, DSL parsers) can be integrated as plugins into the system.  
+- **Coexistence**: Part of the workflow can be built via drag-and-drop, while individual steps can be implemented as custom scripts (or DSL).
+
+##### Example: Custom DSL
+You could design a lean DSL in which workflows look like this:
+```yaml
+onEvent: "priceChanged"
+steps:
+  - name: "CheckPrice"
+    condition: "price > 500"
+    ifTrue:
+      - action: "invokeAgent"
+        agent: "AlternativeBookingService"
+    ifFalse:
+      - action: "notifyUser"
+        message: "Price is below 500!"
+```
+
+
 ## **Internet standardization process**
 
 The AgentNetworkProtocolSecure (ANTS) protocol (ants://) is a standardized communication protocol developed specifically for decentralized, autonomous software agents in the AgentNetwork. It enables secure and efficient communication in various scenarios, including synchronous, asynchronous and real-time communication. This protocol offers the necessary flexibility, scalability and security to meet the requirements of a modern, decentralized network.
