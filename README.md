@@ -25,7 +25,14 @@ This layer regulates communication between agents and services via gRPC and HTTP
 
 ### **Application layer (layer 2):**
 
-The agents and services are implemented in this layer. Requests are processed via APIs and the results can be returned synchronously (request-response), asynchronously (webhooks) or in real time (websockets). This layer is flexible and allows the integration of external services as well as the development of own logic.
+In this layer, agents and services are implemented. Requests are processed via APIs and can be returned synchronously (request-response), asynchronously (webhooks), or in real time (websockets). The architecture allows for both the integration of external services and the development of custom logic. A special focus lies on **emergence**—the ability to dynamically develop complex behaviors:
+
+- **Rule-Based Decisions**: Adaptation through simple heuristics, such as “Switch to a different API after three consecutive failures.”  
+- **Optional AI/ML Usage**: Optimize strategies using intelligent methods.  
+- **Reactive Feedback**: Dynamically respond to changes (e.g. prices, availability) via Pub/Sub systems.  
+- **Self-Healing and Collaboration**: Agents independently resolve issues by cooperating with partner services, without relying on centralized control.
+
+These capabilities foster the creation of **scalable, adaptive, and resilient** systems.
 
 ### **Recipe and process layer (layer 3):**
 
