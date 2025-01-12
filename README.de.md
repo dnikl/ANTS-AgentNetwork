@@ -48,7 +48,7 @@ Das Agenten-Netzwerk nutzt Technologien wie gRPC, HTTP/2, Protobuf und TLS, um e
 
 Um die Architektur des Agenten-Netzwerks besser zu verstehen, zeigt die folgende Grafik die verschiedenen Schichten (Layer), aus denen das Netzwerk besteht. Diese Schichten sind modular aufgebaut, um eine flexible und skalierbare Implementierung zu ermöglichen.
 
-![ANTS-AgentNetwork Diagramm](./images/layer_description.de.png)
+![layer_description de](https://github.com/user-attachments/assets/a08f4683-b8b4-416e-ac7e-130d5d1fe0bf)
 
 ### **Flexible Kommunikationsmodelle im Agenten-Netzwerk**
 
