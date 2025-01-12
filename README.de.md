@@ -479,5 +479,6 @@ Das Agenten-Netzwerk ist mehr als nur eine technologische Innovation \- es ist e
 ## **Release Notes**
 
 Daniel Niklaus  
-V: 0.1  
-2024.08.25
+V: 0.2  
+2025.01.12
+Inspiration: https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
