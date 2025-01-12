@@ -26,7 +26,15 @@ Das Agenten-Netzwerk ist ein mehrschichtiges, dezentrales System, das die nahtlo
 Diese Schicht regelt die Kommunikation zwischen Agenten und Diensten über gRPC und HTTP/2 mit Protobuf als Datenformat. TLS sichert die Datenübertragung, und eine optionale Ende-zu-Ende-Verschlüsselung erhöht den Schutz sensibler Informationen. Diese Schicht folgt einer Zero-Trust-Architektur mit strenger Authentifizierung und Autorisierung (OAuth 2.0, JWTs).
 
 **Anwendungsschicht (Layer 2):**  
-In dieser Schicht werden die Agenten und Dienste implementiert. Anfragen werden über APIs bearbeitet, und die Ergebnisse können synchron (Request-Response), asynchron (Webhooks) oder in Echtzeit (Websockets) zurückgegeben werden. Diese Schicht ist flexibel und erlaubt die Integration externer Dienste sowie die Entwicklung eigener Logik.
+In dieser Schicht werden die Agenten und Dienste implementiert. Anfragen werden über APIs bearbeitet und können synchron (Request-Response), asynchron (Webhooks) oder in Echtzeit (Websockets) zurückgegeben werden. Die Architektur erlaubt sowohl die Integration externer Dienste als auch die Entwicklung eigener Logik. Ein besonderer Fokus liegt auf **Emergenz**, der Fähigkeit, komplexe Verhaltensweisen dynamisch zu entwickeln.
+
+- **Regelbasierte Entscheidungen:** Anpassung durch einfache Heuristiken, z. B. „Wechsle API nach drei Fehlversuchen“.  
+- **Optionale ML-/KI-Nutzung:** Optimierung von Strategien durch intelligente Verfahren.  
+- **Reaktives Feedback:** Dynamische Anpassung an Änderungen wie Preise oder Verfügbarkeiten über Pub/Sub-Systeme.  
+- **Selbstheilung und Kollaboration:** Eigenständige Lösung von Problemen durch Kooperation mit Partnerdiensten, ohne zentrale Steuerung.
+
+Diese Eigenschaften fördern die Entwicklung skalierbarer, adaptiver und resilienter Systeme.
+
 
 **Rezept- und Ablaufschicht (Layer 3):**  
 Diese Schicht steuert Arbeitsabläufe und Automatisierungen. Benutzer und Entwickler können "Rezepte" erstellen, die Aufgaben automatisieren. Diese Ebene bietet eine Low-Code-Umgebung, die sowohl technisch weniger versierten Benutzern als auch Entwicklern Flexibilität bietet.
@@ -50,9 +58,11 @@ Ein zentraler Bestandteil des Agenten-Netzwerks ist die flexible Kommunikation z
 * Spezialisierter Agent: Ein Server agiert als spezialisierter Agent, der Anfragen entgegennimmt, zusätzliche Recherchen durchführt und fundierte Antworten asynchron per Webhook liefert.  
 * Direkter Agentenaustausch: Agenten kommunizieren direkt miteinander, ohne einen zwischengeschalteten Server. Hier kommunizieren die Agenten in Echtzeit mittels Websocket.  
 * Indirekter Agentenaustausch: Ein Agent kommuniziert über einen Vermittler, der die Verbindung zu anderen Agenten herstellt.
+*Event-/Status-Streams: Agenten können (z.B. über Pub/Sub) **dauerhaft** Status- oder Ereignismeldungen (Events) bereitstellen, ohne dass eine explizite Anfrage erfolgen muss. Andere Agenten/Rezepte „abonnieren“ bestimmte Eventtypen (z.B. `PRICE_UPDATE`), um in Echtzeit informiert zu werden.
+*Langzeit-Subscription: Rezepte oder Agenten können sich **permanent** für relevante Events registrieren und Filter definieren. So lassen sich kontinuierliche Datenströme oder laufende Überwachungsaufgaben realisieren.
+*Erweiterte Delegation: Bietet die Möglichkeit, Aufgaben an andere Agenten zu delegieren und dabei **Bedingungen** (z.B. Zeitlimit, Kostenlimit) oder Fallbacks anzugeben. Delegierte Agenten liefern während der Ausführung **Zwischenstände** zurück, sodass parallele, kaskadierte Prozesse entstehen.
 
-
-Diese Modelle ermöglichen eine effiziente und skalierbare Interaktion im Netzwerk.
+Diese Modelle ermöglichen eine effiziente, **skalierbare** und nun auch **ereignisgetriebene** Interaktion im Netzwerk. Insbesondere durch Event-/Status-Streams und erweiterte Delegationsmechanismen kann das Agenten-Netzwerk **emergente Verhaltensweisen** fördern, da Agenten kontinuierlich Informationen austauschen, auf unvorhergesehene Ereignisse reagieren und Aufgaben flexibel umverteilen.
 
 ![Server-Modell](./images/agent_communication_models.de.png)  
 
