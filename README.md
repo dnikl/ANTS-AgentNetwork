@@ -186,6 +186,18 @@ Each recipe step checks via OAuth 2.0/JWT whether the called agent is authorized
 Recipes serve as **flexible, emergent workflows** that react to **agent feedback**, perform **parallel** searches, and adapt to changing conditions. In doing so, the agent network increasingly resembles **biological systems**, where many local units use **feedback loops** and **decentralization** to generate robust, adaptive solutions. At the same time, thanks to **low-code editors**, the system remains **accessible** and **straightforward** for a wide range of users.
 
 
+## Layer 4: User Layer with Autonomous Identity – Configuring the “Aggressiveness Level”
+
+To allow users—whether end consumers or corporate admins—to govern the degree of **self-organization** and **exploratory mechanisms**, Layer 4 offers configuration options for an “aggressiveness level”:
+
+- **Exploration Depth**: Defines how many alternative paths a recipe may execute (“Test up to 5 agents in parallel”).
+- **Time Limit**: Specifies how long the system should search or negotiate (“Stop after 30 seconds”).
+- **Budget Constraints**: Restricts the financial scope of an automatic purchase or booking (“Max. $500 per ticket”).
+- **Risk Tolerance**: Determines whether (and to what extent) random factors or experimental agents are involved (“Send 10% of my requests to new, untested providers”).
+
+These settings give end users **full control** over the automation process. One can choose to be **conservative** (only established methods and strict limits) or **aggressive** (parallel searches, evolutionary paths). This flexibility ensures that **privacy** and **budget** constraints, as well as **innovation** and **adaptability**, remain in balance.
+
+
 ## **Internet standardization process**
 
 The AgentNetworkProtocolSecure (ANTS) protocol (ants://) is a standardized communication protocol developed specifically for decentralized, autonomous software agents in the AgentNetwork. It enables secure and efficient communication in various scenarios, including synchronous, asynchronous and real-time communication. This protocol offers the necessary flexibility, scalability and security to meet the requirements of a modern, decentralized network.
