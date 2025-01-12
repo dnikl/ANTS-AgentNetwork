@@ -79,7 +79,6 @@ This layer controls **workflows** and **automations** within the agent network. 
 - **Low-Code Approach**  
   Standard building blocks and drag-and-drop editors make it easy to create and modify automations without extensive programming knowledge.
 
-
 #### **Advanced Mode: Custom Programming or DSL**
 
 To enable **maximum flexibility**, the recipe and workflow layer also supports an **advanced mode** that allows you to define recipes:
@@ -107,6 +106,81 @@ steps:
       - action: "notifyUser"
         message: "Price is below 500!"
 ```
+
+#### 2. Dynamic and Rule-Based Orchestration
+
+To **support emergent behavior** and handle unforeseen situations automatically, the extended recipe and workflow layer leverages **rule-based, event-driven** concepts:
+
+### Rule-Based Workflows
+- Instead of purely linear “If A, then B” flows, a recipe can activate different **branches** whenever certain **conditions** or **events** occur (e.g., error messages, timeouts, agent status updates).  
+- Recipes can **dynamically** respond by triggering new actions or terminating certain paths.
+
+### Event-Driven Architecture
+- Agents (Layer 2) send **asynchronous** events into the network (e.g., “price has changed,” “participant threshold reached”).  
+- Recipes can subscribe to these events (Pub/Sub) and **continuously** react, rather than issuing instructions only once.
+
+### Parallel and Swarm Mechanisms
+- **Parallel nodes** allow the same task to be delegated to multiple agents or services at once, then select the **best results**.  
+- **Swarm concepts** (e.g., multiple agents searching in parallel for the cheapest flight) broaden “search and compare” capabilities, increasing robustness and efficiency.
+
+#### 3. Feedback Loops and Emergent Processes
+
+A central element of the extended Layer 3 is the **continuous** monitoring of feedback and state changes:
+
+- **Continuous Status Updates**  
+  Agents can report their progress at any time (e.g., “40% done,” “additional data required”).
+
+- **Adaptive Recipe Behavior**  
+  Based on these updates, a recipe can **autonomously** adjust its flow (e.g., request alternative services, extend timeouts, look for cheaper options).
+
+- **Evolutionary / Iterative Methods (Optional)**  
+  Recipes can run in loops, learning from past runs and using improved parameters in the next cycle.
+
+#### 4. Low-Code Environment: Manageability Despite Complexity
+
+To keep the additional **parallel** and **rule-based** features from becoming too complex, a **low-code** philosophy is followed:
+
+### Visual Editors
+- Recipes can be modeled like **flowcharts**: blocks (tasks, event listeners, gateways) and edges (transitions on success, failure, or specific conditions).  
+- Specialized **swarm nodes** (multiple invocations) or **fallback nodes** (error handling) can be predefined building blocks.
+
+### Rule Editor
+- Simple if-then-else logic can be configured in a **GUI** (e.g., “If price > 500, query an alternative agent”).  
+- Advanced users can embed scripting logic (e.g., JavaScript, Python) if desired.
+
+### Templates and Best Practices
+- Common workflow patterns (e.g., parallel quote requests, group negotiations, escalation chains) are available as **templates**.  
+- This lowers the barrier to creating complex recipes that enable emergent behavior.
+
+#### 5. Benefits and Use Cases
+
+### Self-Adapting Booking Processes
+Recipes automatically respond to price fluctuations or fully booked capacities, switching to other options without manual intervention.
+
+### Robust Error Handling
+Instead of failing outright, recipes can route tasks to alternative paths or agents when errors occur—akin to a biological “healing function.”
+
+### Added Value Through Parallel Execution
+Save time and money by querying several providers/agents simultaneously.
+
+### Swarm Scenarios
+In complex use cases (e.g., “group-buy” for flights or joint offers), recipes distribute subtasks among many agents and automatically consolidate the results.
+
+#### 6. Technical Implementation
+
+### Persistence
+During recipe execution, intermediate results are stored in a **context data structure**, ensuring you can always track which path was chosen.
+
+### Protocol Support (Layer 1)
+Implement **asynchronous events/streams** and `DELEGATE_WITH_CONDITIONS` methods so agents can provide feedback or delegate subtasks.
+
+### Orchestration Engine
+A central or decentralized service interprets and executes the recipes in real time, potentially hosted in container environments (e.g., Kubernetes, Docker) for scalability and high availability.
+
+### Security
+Each recipe step checks via OAuth 2.0/JWT whether the called agent is authorized and logs all activities in an **audit log**.
+
+Recipes serve as **flexible, emergent workflows** that react to **agent feedback**, perform **parallel** searches, and adapt to changing conditions. In doing so, the agent network increasingly resembles **biological systems**, where many local units use **feedback loops** and **decentralization** to generate robust, adaptive solutions. At the same time, thanks to **low-code editors**, the system remains **accessible** and **straightforward** for a wide range of users.
 
 
 ## **Internet standardization process**
