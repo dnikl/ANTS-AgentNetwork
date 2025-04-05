@@ -25,14 +25,14 @@ This layer regulates communication between agents and services via gRPC and HTTP
 
 ### **Application layer (layer 2):**
 
-In this layer, agents and services are implemented. Requests are processed via APIs and can be returned synchronously (request-response), asynchronously (webhooks), or in real time (websockets). The architecture allows for both the integration of external services and the development of custom logic. A special focus lies on **emergence**—the ability to dynamically develop complex behaviors:
+In this layer, agents and services are implemented. Requests are processed via APIs and can be returned synchronously (request-response), asynchronously (webhooks), or in real time (websockets). The architecture allows for both the integration of external services and the development of custom logic. To facilitate the integration of external services and tools (like databases, APIs, file systems), ANTS agents within this layer could potentially leverage emerging standards like the Model Context Protocol (MCP). MCP focuses on standardizing how an agent interacts with specific tools and data sources. While ANTS-Net's primary focus is on standardizing the decentralized communication and collaboration between agents (Agent-to-Agent) using the ANTS protocol (ants://), utilizing MCP for specific Agent-to-Tool interactions within an agent's implementation could streamline access to a broad ecosystem of external resources. A special focus lies on emergence—the ability to dynamically develop complex behaviors:
 
 - **Rule-Based Decisions**: Adaptation through simple heuristics, such as “Switch to a different API after three consecutive failures.”  
 - **Optional AI/ML Usage**: Optimize strategies using intelligent methods.  
 - **Reactive Feedback**: Dynamically respond to changes (e.g. prices, availability) via Pub/Sub systems.  
-- **Self-Healing and Collaboration**: Agents independently resolve issues by cooperating with partner services, without relying on centralized control.
+- **Self-Healing and Collaboration**: Agents independently resolve issues by cooperating with partner ANTS services or other ANTS agents, without relying on centralized control.
 
-These capabilities foster the creation of **scalable, adaptive, and resilient** systems.
+These capabilities foster the creation of **scalable, adaptive, and resilient** systems within the ANTS network.
 
 ### **Recipe and process layer (layer 3):**
 
@@ -515,6 +515,7 @@ V: 0.3
 Inspiration: 
 https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
 https://www.delta-labs.ch/post/context-in-multi-agent-systems-and-kisma-as-a-remedy
+https://huggingface.co/blog/Kseniase/mcp
 
 
 
