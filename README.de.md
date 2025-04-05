@@ -26,14 +26,14 @@ Das Agenten-Netzwerk ist ein mehrschichtiges, dezentrales System, das die nahtlo
 Diese Schicht regelt die Kommunikation zwischen Agenten und Diensten über gRPC und HTTP/2 mit Protobuf als Datenformat. TLS sichert die Datenübertragung, und eine optionale Ende-zu-Ende-Verschlüsselung erhöht den Schutz sensibler Informationen. Diese Schicht folgt einer Zero-Trust-Architektur mit strenger Authentifizierung und Autorisierung (OAuth 2.0, JWTs).
 
 **Anwendungsschicht (Layer 2):**  
-In dieser Schicht werden die Agenten und Dienste implementiert. Anfragen werden über APIs bearbeitet und können synchron (Request-Response), asynchron (Webhooks) oder in Echtzeit (Websockets) zurückgegeben werden. Die Architektur erlaubt sowohl die Integration externer Dienste als auch die Entwicklung eigener Logik. Ein besonderer Fokus liegt auf **Emergenz**, der Fähigkeit, komplexe Verhaltensweisen dynamisch zu entwickeln.
+In dieser Schicht werden die Agenten und Dienste implementiert. Anfragen werden über APIs bearbeitet und können synchron (Request-Response), asynchron (Webhooks) oder in Echtzeit (Websockets) zurückgegeben werden. Die Architektur erlaubt sowohl die Integration externer Dienste als auch die Entwicklung eigener Logik. Um die Anbindung an externe Dienste und Werkzeuge (wie Datenbanken, APIs, Dateisysteme) zu vereinfachen, könnten ANTS-Agenten innerhalb dieser Schicht aufkommende Standards wie das Model Context Protocol (MCP) nutzen. MCP konzentriert sich darauf zu standardisieren, wie ein Agent mit spezifischen Werkzeugen und Datenquellen interagiert. Während der primäre Fokus von ANTS-Net auf der Standardisierung der dezentralen Kommunikation und Kollaboration zwischen Agenten (Agent-zu-Agent) mittels des ANTS-Protokolls (ants://) liegt, könnte die Nutzung von MCP für spezifische Agent-zu-Werkzeug-Interaktionen innerhalb der Implementierung eines Agenten den Zugriff auf ein breites Ökosystem externer Ressourcen vereinheitlichen. Ein besonderer Fokus liegt auf Emergenz, der Fähigkeit, komplexe Verhaltensweisen dynamisch zu entwickeln:
 
 - **Regelbasierte Entscheidungen:** Anpassung durch einfache Heuristiken, z. B. „Wechsle API nach drei Fehlversuchen“.  
 - **Optionale ML-/KI-Nutzung:** Optimierung von Strategien durch intelligente Verfahren.  
 - **Reaktives Feedback:** Dynamische Anpassung an Änderungen wie Preise oder Verfügbarkeiten über Pub/Sub-Systeme.  
-- **Selbstheilung und Kollaboration:** Eigenständige Lösung von Problemen durch Kooperation mit Partnerdiensten, ohne zentrale Steuerung.
+- **Selbstheilung und Kollaboration:** Eigenständige Lösung von Problemen durch Kooperation mit **ANTS-**Partnerdiensten oder anderen ANTS-Agenten, ohne zentrale Steuerung.
 
-Diese Eigenschaften fördern die Entwicklung skalierbarer, adaptiver und resilienter Systeme.
+Diese Eigenschaften fördern die Entwicklung skalierbarer, adaptiver und resilienter Systeme innerhalb des ANTS-Netzwerks.
 
 
 **Rezept- und Ablaufschicht (Layer 3):**  
@@ -533,3 +533,4 @@ V: 0.3
 Inspiration: 
 https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
 https://www.delta-labs.ch/post/context-in-multi-agent-systems-and-kisma-as-a-remedy
+https://huggingface.co/blog/Kseniase/mcp
