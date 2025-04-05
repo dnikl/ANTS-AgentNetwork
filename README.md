@@ -73,6 +73,30 @@ The following figure provides an overview of possible market participants and ba
 
 ![Agent Services](./images/agent_network_services_and_companies.de.png)
 
+## Decentralized Context Inquiry and Follow-up Capabilities
+The ANTS Network benefits from its decentralized architecture – not only in agent communication but also in handling context information. To enhance interactions and reduce misunderstandings (for example, when ambiguous pronouns are used), a mechanism is introduced that allows each agent to request or verify context as needed.
+
+**Decentralized Context Management:**
+Each agent maintains its own local context store, which contains all the relevant information collected during previous communications. If an agent encounters uncertainties while evaluating a response, it can augment its local context using a CONTEXT_REQUEST message.
+
+**Follow-up and Iteration Mechanism:**
+If a response is reviewed against the existing context and found to be insufficient, the agent can either issue additional context requests or repeat the original query. The preceding agent decides whether and to what extent additional information is provided – taking into account data protection or relevance criteria.
+
+### Advantages of Decentralized Context Exchange:
+
+**Flexibility and Adaptability:**
+Agents can retrieve the necessary context on a situational basis without relying on a centralized manager.
+
+**Robustness and Fault Tolerance:**
+Eliminating a single point of failure ensures that even if individual agents fail, the overall context can still be dynamically expanded.
+
+**Data Protection and Control:**
+Each agent retains the authority to decide which context information is shared – thereby enhancing data protection and enabling needs-based information dissemination.
+
+**Iterative Refinement of Results:**
+By verifying responses against the locally stored context and, if necessary, repeating the query, the precision of communication between agents is significantly increased.
+
+
 ## **Biology-Inspired Recipes (Layer 3)**
 
 This layer controls **workflows** and **automations** within the agent network. Users and developers can create **“recipes”**—much like scripts—to orchestrate various agents and services. The layer still provides a **low-code environment** that offers both non-technical users and developers **flexibility** and **clarity**.
@@ -232,7 +256,9 @@ It will be submitted to the Internet Engineering Steering Group (EITF) as an RFC
      * DELEGATE\_WITH\_CONDITIONS: Delegate with specific conditions (e.g., time limits, resource constraints).  
      * QUERY: Request specific information.  
      * UPDATE: Update status or data.  
-     * CUSTOM\_QUERY: Define and execute complex queries.  
+     * CUSTOM\_QUERY: Define and execute complex queries.
+     * `CONTEXT_REQUEST`: An agent can use this type to specifically request additional context information from the preceding agent.
+     * `CONTEXT_RESPONSE`: The preceding agent responds with the requested information, provided that it is permitted to share it.
    * **Header Fields:**  
      * Agent-ID: Unique identification of the sending agent.  
      * Delegation-Flag: Indicates whether the request is made on behalf of another agent.  
@@ -484,8 +510,11 @@ The agent network is more than just a technological innovation – it is a step 
 ## **Release Notes**
 
 Daniel Niklaus  
-V: 0.2  
-2025.01.12 Inspiration: https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
+V: 0.3  
+2025.01.12 
+Inspiration: 
+https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
+https://www.delta-labs.ch/post/context-in-multi-agent-systems-and-kisma-as-a-remedy
 
 
 
