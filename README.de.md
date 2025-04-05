@@ -70,8 +70,34 @@ Die folgende Abbildung gibt einen Überblick über mögliche Marktteilnehmer und
 
 ![Agentendienste](./images/agent_network_services_and_companies.de.png)
 
+## Dezentrale Kontextabfrage und Rückfragemöglichkeiten
+
+Das ANTS Network profitiert von seiner dezentralen Architektur – nicht nur in der Agentenkommunikation, sondern auch bei der Handhabung von Kontextinformationen. Zur Verbesserung der Interaktion und Reduzierung von Missverständnissen (beispielsweise bei der Verwendung unklarer Pronomen) wird ein Mechanismus eingeführt, der es jedem Agenten ermöglicht, bei Bedarf den Kontext anzufordern oder zu überprüfen.
+
+** Dezentrale Kontextverwaltung: **
+Jeder Agent führt einen eigenen, lokalen Kontextspeicher. Dieser enthält alle relevanten Informationen, die im bisherigen Kommunikationsverlauf gesammelt wurden. Falls ein Agent bei der Auswertung einer Antwort Unsicherheiten feststellt, kann er den lokalen Kontext mit Hilfe einer CONTEXT_REQUEST-Nachricht ergänzen.
+
+** Rückfrage- und Iterationsmechanismus: **
+Wird eine Antwort anhand des vorhandenen Kontexts geprüft und als unzureichend identifiziert, so kann der Agent entweder weitere Kontextanfragen stellen oder die ursprüngliche Anfrage wiederholen. Der Vorgänger entscheidet dabei, ob und in welchem Umfang zusätzliche Informationen weitergegeben werden – etwa unter Berücksichtigung von Datenschutz- oder Relevanzkriterien.
+
+### Vorteile des dezentralen Kontextaustauschs:
+
+** Flexibilität und Anpassungsfähigkeit: **
+Agenten können situativ den benötigten Kontext abrufen, ohne auf einen zentralen Manager angewiesen zu sein.
+
+** Robustheit und Fehlertoleranz: **
+Der Verzicht auf einen Single Point of Failure sorgt dafür, dass auch bei Ausfällen einzelner Agenten der Gesamtkontext weiterhin dynamisch erweitert werden kann.
+
+**Datenschutz und Kontrolle: **
+Jeder Agent behält selbst die Entscheidung, welche Kontextinformationen weitergegeben werden – das stärkt den Datenschutz und ermöglicht eine bedarfsorientierte Informationsweitergabe.
+
+** Iterative Verfeinerung der Ergebnisse: **
+Durch die Möglichkeit, Antworten anhand des lokal gespeicherten Kontextes zu überprüfen und bei Bedarf die Anfrage zu wiederholen, steigt die Präzision der Kommunikation zwischen den Agenten erheblich.
+
+
 ## **Von der Biologie insperierte Rezepte (Layer 3)**
 Diese Schicht steuert **Arbeitsabläufe** und **Automatisierungen** im Agenten-Netzwerk. Benutzer und Entwickler können sogenannte **„Rezepte“** erstellen, die – ähnlich wie Skripte – verschiedene Agenten und Dienste miteinander orchestrieren. Diese Schicht bietet weiterhin eine **Low-Code-Umgebung**, die sowohl technisch weniger versierten Anwendern als auch Entwicklern **Flexibilität** und **Übersicht** bietet.
+
 
 
 #### 1. Automatisierung über Rezepte
@@ -232,6 +258,8 @@ Es wird bei der Internet Engineering Steering Group (EITF) als RFC beantragt (ht
     * `QUERY`: Anforderung spezifischer Informationen.  
     * `UPDATE`: Aktualisierung von Status oder Daten.  
     * `CUSTOM_QUERY`: Definieren und Ausführen komplexer Abfragen.  
+    * `CONTEXT_REQUEST`: Ein Agent kann diesen Typ nutzen, um beim Vorgänger gezielt zusätzliche Kontextinformationen anzufordern.
+    * `CONTEXT_RESPONSE`: Der Vorgänger-Agent antwortet mit den angeforderten Informationen, sofern er diese freigeben darf.  
 * **Header-Felder**:  
   * **Agent-ID**: Eindeutige Identifikation des sendenden Agenten.  
   * **Delegation-Flag**: Gibt an, ob die Anfrage im Auftrag eines anderen Agenten erfolgt.  
@@ -500,6 +528,8 @@ Das Agenten-Netzwerk ist mehr als nur eine technologische Innovation \- es ist e
 ## **Release Notes**
 
 Daniel Niklaus  
-V: 0.2  
-2025.01.12
-Inspiration: https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
+V: 0.3  
+2025.04.05
+Inspiration: 
+https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-science-need-better-common-ground-07e5154c8765
+https://www.delta-labs.ch/post/context-in-multi-agent-systems-and-kisma-as-a-remedy
