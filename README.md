@@ -534,5 +534,15 @@ https://medium.com/@marcelblattner/the-agency-gap-why-biology-and-computer-scien
 https://www.delta-labs.ch/post/context-in-multi-agent-systems-and-kisma-as-a-remedy
 https://huggingface.co/blog/Kseniase/mcp
 
+Update development:
+Google - Agentic Resource Discovery
+https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/?utm_source=chatgpt.com
+
+Universal Commerce protocol (UCP)
+https://ucp.dev/documentation/announcements/
+
+Open Agentic Internet by cloudflare
+https://blog.cloudflare.com/the-agentic-internet
+
 
 
